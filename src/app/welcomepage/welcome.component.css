@@ -1,0 +1,13 @@
+.welcome-page {
+    text-align: center;
+}
+.welcome-page a {
+    font-size: 10px;
+}
+.robot-logo {
+    width: 300px;
+}
+.play-button {
+    margin-top: 20px;
+    width: 80px;
+}

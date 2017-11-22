@@ -10,12 +10,12 @@ export class Robot {
         this.initialPosition = new Position();
         this.initialPosition.xPosition = startPosition.xPosition;
         this.initialPosition.yPosition = startPosition.yPosition;
-        this.initialPosition.facing = startPosition.facing.trim();
+        this.initialPosition.facing = startPosition.facing;
         
         this.finalPosition = new Position();
         this.finalPosition.xPosition = startPosition.xPosition;
         this.finalPosition.yPosition = startPosition.yPosition;
-        this.finalPosition.facing = startPosition.facing.trim();
+        this.finalPosition.facing = startPosition.facing;
 
         this.movementInstructions = movements;
     }

@@ -12,15 +12,23 @@ export class RobotComponent {
     output: string;
     position: Position;
     robot: Robot;
+    // To highlight cells
+    startCell: string;
+    endCell: string;
 
     navigateTheRobot() {
-        let inputArray = this.userInput.replace(/\n/g, " ").split(" ");
-        this.initializeStartPosition(inputArray[1].trim());
-        this.robot = new Robot(this.position, inputArray.slice(2));
+        // Interprete the user input
+        let inputArray = this.userInput.split("\n");
+        inputArray = inputArray.map(element => element.trim());
+        this.initializeStartPosition(inputArray[0].split(" ")[1]);
+        // Start playing with the 'Robot' object
+        this.robot = new Robot(this.position, inputArray.slice(1));
         this.robot.move();
-        // Display output
+        // Display output in textbox
         this.output = this.robot.finalPosition.xPosition + ", " + this.robot.finalPosition.yPosition
             + ", " + this.robot.finalPosition.facing;
+        // Display 'out' sign on grid
+        this.endCell = this.robot.finalPosition.xPosition + "" + this.robot.finalPosition.yPosition;
     }
     initializeStartPosition(input: string) {
         this.position = new Position();
@@ -29,5 +37,7 @@ export class RobotComponent {
         this.position.xPosition = parseInt(stringArray[0]);
         this.position.yPosition = parseInt(stringArray[1]);
         this.position.facing = stringArray[2];
+        // Display 'in' sign on grid
+        this.startCell = this.position.xPosition + "" + this.position.yPosition;
     }
 }
