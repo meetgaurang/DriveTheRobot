@@ -8,12 +8,21 @@
 }
 .robot-grid-container .col {
     border: 1px #d3d3d3 solid;
-    height: 60px;
+    height: 50px;
+    font-size: 12px;
 }
 .logo-container {
     text-align: center;
 }
 .input-container {
-    margin-top: 20px;
+    margin-top: 10px;
     width: 60%;
+}
+.input-container textarea {
+    font-size: 12px;
+}
+
+.input-container .button-container {
+    text-align: center;
+    margin-top: 10px;
 }

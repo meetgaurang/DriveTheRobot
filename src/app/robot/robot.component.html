@@ -4,89 +4,39 @@
 <div class="robot-grid-container">
     <div class="container">
         <div class="row">
-            <div class="col">
-                (0, 4)
-            </div>
-            <div class="col">
-                (1, 4)
-            </div>
-            <div class="col">
-                (2, 4)
-            </div>
-            <div class="col">
-                (3, 4)
-            </div>
-            <div class="col">
-                (4, 4)
-            </div>
+            <div class="col"> (0, 4) </div>
+            <div class="col"> (1, 4) </div>
+            <div class="col"> (2, 4) </div>
+            <div class="col"> (3, 4) </div>
+            <div class="col"> (4, 4) </div>
         </div>
         <div class="row">
-            <div class="col">
-                (0, 3)
-            </div>
-            <div class="col">
-                (1, 3)
-            </div>
-            <div class="col">
-                (2, 3)
-            </div>
-            <div class="col">
-                (3, 3)
-            </div>
-            <div class="col">
-                (4, 3)
-            </div>
+            <div class="col"> (0, 3) </div>
+            <div class="col"> (1, 3) </div>
+            <div class="col"> (2, 3) </div>
+            <div class="col"> (3, 3) </div>
+            <div class="col"> (4, 3) </div>
         </div>
         <div class="row">
-            <div class="col">
-                (0, 2)
-            </div>
-            <div class="col">
-                (1, 2)
-            </div>
-            <div class="col">
-                (2, 2)
-            </div>
-            <div class="col">
-                (3, 2)
-            </div>
-            <div class="col">
-                (4, 2)
-            </div>
+            <div class="col"> (0, 2) </div>
+            <div class="col"> (1, 2) </div>
+            <div class="col"> (2, 2) </div>
+            <div class="col"> (3, 2) </div>
+            <div class="col"> (4, 2) </div>
         </div>
         <div class="row">
-            <div class="col">
-                (0, 1)
-            </div>
-            <div class="col">
-                (1, 1)
-            </div>
-            <div class="col">
-                (2, 1)
-            </div>
-            <div class="col">
-                (3, 1)
-            </div>
-            <div class="col">
-                (4, 1)
-            </div>
+            <div class="col"> (0, 1) </div>
+            <div class="col"> (1, 1) </div>
+            <div class="col"> (2, 1) </div>
+            <div class="col"> (3, 1) </div>
+            <div class="col"> (4, 1) </div>
         </div>
         <div class="row">
-            <div class="col">
-                (0, 0)
-            </div>
-            <div class="col">
-                (1, 0)
-            </div>
-            <div class="col">
-                (2, 0)
-            </div>
-            <div class="col">
-                (3, 0)
-            </div>
-            <div class="col">
-                (4, 0)
-            </div>
+            <div class="col"> (0, 0) </div>
+            <div class="col"> (1, 0) </div>
+            <div class="col"> (2, 0) </div>
+            <div class="col"> (3, 0) </div>
+            <div class="col"> (4, 0) </div>
         </div>
     </div>
 </div>
@@ -94,11 +44,16 @@
     <div class="row">
         <div class="col">
             Input
-            <textarea class="form-control" placeholder="PLACE 0,0,NORTH Hello"></textarea>
+            <textarea class="form-control" rows="6" [(ngModel)]="userInput"></textarea>
         </div>
         <div class="col">
             Output
-            <textarea class="form-control"></textarea>
+            <textarea class="form-control" rows="6" [ngModel]="output"></textarea>
+        </div>
+    </div>
+    <div class="row button-container">
+        <div class="col">
+            <button type="button" class="btn btn-success" (click)="navigateTheRobot()">Drive the Robot</button>
         </div>
     </div>
 </div>
