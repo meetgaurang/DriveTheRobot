@@ -34,10 +34,11 @@ Angular 5, Typescript, Jasmine and Karma (for Unit Test,) HTML5, CSS3
 
 ![](../master/src/assets/screenshot/output.png)
 
+## Unit Test Cases
+Run `ng test` to execute the unit tests. You should see test cases being run in the browser as below,
+
+![](../master/src/assets/screenshot/test-cases.png)
+
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
