@@ -77,3 +77,6 @@ Expected output
 
     3,3,NORTH
 }
+
+## References
+[Robot Image Credit](https://www.freepik.com/free-vector/coloured-robot-design_901196.htm)
