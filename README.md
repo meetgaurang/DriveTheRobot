@@ -5,15 +5,31 @@ This solution is an Angular 2+ based Web application to solve the Robot puzzle a
 
 ## Technologies Used
 
-Angular 4, Typescript, Jasmine and Karma (for Unit Test,) HTML5, CSS3
+Angular 5, Typescript, Jasmine and Karma (for Unit Test,) HTML5, CSS3
 
-## Development server
+## How to Run this App
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+* Install the Angular-CLI globally by running following command. Ignore if already installed.
+`npm install -g @angular/cli`
 
-## Code scaffolding
+* Clone this GIT repository on local machine
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
+* Go inside project directory by running `cd DriveTheRobot`
+
+* Install npm packages by running `npm install` command,
+
+* Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## How this App Works
+
+1) The Welcome page. Just click on 'Play' button
+![](../master/src/assets/screenshot/welcome.png)
+
+2) The main puzzle page. Enter input as per defined rule. Click on 'Drive the Robot' button to see the answer in 'output' field.
+![](../master/src/assets/screenshot/Input.png)
+
+3) You could see the answer in 'Output' textbox. Also, you could see answer in graphical form inside the grid.
+![](../master/src/assets/screenshot/output.png)
 
 ## Build
 
@@ -22,13 +38,3 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-
