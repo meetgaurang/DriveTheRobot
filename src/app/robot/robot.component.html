@@ -145,6 +145,7 @@
         <div class="col">
             Input
             <textarea class="form-control" rows="6" [(ngModel)]="userInput"></textarea>
+            <div *ngIf="inputInvalid==true" class="errormsg">Input invalid</div>
         </div>
         <div class="col">
             Output

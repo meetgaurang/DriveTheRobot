@@ -15,7 +15,7 @@ describe('WelcomeComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
-  it('should render title in a h1 tag', async(() => {
+  it('should render title in an h1 tag', async(() => {
     const fixture = TestBed.createComponent(WelcomeComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;

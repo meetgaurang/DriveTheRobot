@@ -15,6 +15,8 @@ export class RobotComponent {
     // To highlight cells
     startCell: string;
     endCell: string;
+    // User input validity flag
+    inputInvalid: boolean = false;
 
     navigateTheRobot() {
         // Interprete the user input
@@ -23,7 +25,14 @@ export class RobotComponent {
         this.initializeStartPosition(inputArray[0].split(" ")[1]);
         // Start playing with the 'Robot' object
         this.robot = new Robot(this.position, inputArray.slice(1));
-        this.robot.move();
+        try {
+            this.robot.move();
+        }
+        catch(error) {
+            this.inputInvalid = true;
+            return;
+        }
+        this.inputInvalid = false;
         // Display output in textbox
         this.output = this.robot.finalPosition.xPosition + ", " + this.robot.finalPosition.yPosition
             + ", " + this.robot.finalPosition.facing;
@@ -31,12 +40,7 @@ export class RobotComponent {
         this.endCell = this.robot.finalPosition.xPosition + "" + this.robot.finalPosition.yPosition;
     }
     initializeStartPosition(input: string) {
-        
-        // input is expected as 0,0,NORTH
         let stringArray = input.split(",");
-        // this.position.xPosition = parseInt(stringArray[0]);
-        // this.position.yPosition = parseInt(stringArray[1]);
-        // this.position.facing = stringArray[2];
         this.position = new Position(parseInt(stringArray[0]), parseInt(stringArray[1]),
             stringArray[2]);
         // Display 'in' sign on grid

@@ -32,5 +32,5 @@ describe('RobotComponent', () => {
     expect(fixture.componentInstance.position.xPosition).toEqual(0);
     expect(fixture.componentInstance.position.yPosition).toEqual(0);
     expect(fixture.componentInstance.position.facing).toEqual("NORTH");
-  }))
+  }));
 });
