@@ -1,5 +1,6 @@
 # Drive The Robot
 <img src="../master/src/assets/robot_logo.jpg" width="200px"/>
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.3.
 
 ## Development server
