@@ -10,6 +10,7 @@ Angular 5, Typescript, Jasmine and Karma (for Unit Test,) HTML5, CSS3
 ## How to Run this App
 
 * Install the Angular-CLI globally by running following command. Ignore if already installed.
+
 `npm install -g @angular/cli`
 
 * Clone this GIT repository on local machine
@@ -26,9 +27,11 @@ Angular 5, Typescript, Jasmine and Karma (for Unit Test,) HTML5, CSS3
 ![](../master/src/assets/screenshot/welcome.png)
 
 2) The main puzzle page. Enter input as per defined rule. Click on 'Drive the Robot' button to see the answer in 'output' field.
+
 ![](../master/src/assets/screenshot/Input.png)
 
 3) You could see the answer in 'Output' textbox. Also, you could see answer in graphical form inside the grid.
+
 ![](../master/src/assets/screenshot/output.png)
 
 ## Build
