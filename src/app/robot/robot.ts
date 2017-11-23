@@ -7,19 +7,10 @@ export class Robot {
     finalPosition: Position;
 
     constructor (startPosition: Position, movements: string[]) {
-        this.initialPosition = new Position();
-        this.initialPosition.xPosition = startPosition.xPosition;
-        this.initialPosition.yPosition = startPosition.yPosition;
-        this.initialPosition.facing = startPosition.facing;
-        
-        this.finalPosition = new Position();
-        this.finalPosition.xPosition = startPosition.xPosition;
-        this.finalPosition.yPosition = startPosition.yPosition;
-        this.finalPosition.facing = startPosition.facing;
-
+        this.initialPosition = startPosition;
+        this.finalPosition = Object.assign({}, startPosition);
         this.movementInstructions = movements;
     }
-
     move (): Position {
         for (let eachMove of this.movementInstructions) {
             if (eachMove.toUpperCase() === "MOVE") {
