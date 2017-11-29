@@ -18,26 +18,18 @@ export class RobotComponent {
     // User input validity flag
     inputInvalid: boolean = false;
 
-    navigateTheRobot() {
-        // Interprete the user input
+    execute() {
+        this.interpreteUserInputAndInitialize();
+        this.navigateTheRobot();
+        this.displayOutput();
+    }
+    interpreteUserInputAndInitialize() {
         let inputArray = this.userInput.split("\n");
-        inputArray = inputArray.map(element => element.trim());
+        inputArray = inputArray.map(element => element.trim().toUpperCase());
+        // Initialize Start position
         this.initializeStartPosition(inputArray[0].split(" ")[1]);
-        // Start playing with the 'Robot' object
+        // Initialize Robot object
         this.robot = new Robot(this.position, inputArray.slice(1));
-        try {
-            this.robot.move();
-        }
-        catch(error) {
-            this.inputInvalid = true;
-            return;
-        }
-        this.inputInvalid = false;
-        // Display output in textbox
-        this.output = this.robot.finalPosition.xPosition + ", " + this.robot.finalPosition.yPosition
-            + ", " + this.robot.finalPosition.facing;
-        // Display 'out' sign on grid
-        this.endCell = this.robot.finalPosition.xPosition + "" + this.robot.finalPosition.yPosition;
     }
     initializeStartPosition(input: string) {
         let stringArray = input.split(",");
@@ -45,5 +37,22 @@ export class RobotComponent {
             stringArray[2]);
         // Display 'in' sign on grid
         this.startCell = this.position.xPosition + "" + this.position.yPosition;
+    }
+    navigateTheRobot() {
+        try {
+            this.robot.run();
+        }
+        catch(error) {
+            this.inputInvalid = true;
+            return;
+        }
+        this.inputInvalid = false;
+    }
+    displayOutput() {
+        // Display output in textbox
+        this.output = this.robot.position.xPosition + ", " + this.robot.position.yPosition
+            + ", " + this.robot.position.facing;
+        // Display 'out' sign on grid
+        this.endCell = this.robot.position.xPosition + "" + this.robot.position.yPosition;
     }
 }

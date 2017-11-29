@@ -1,84 +1,35 @@
 import { Position } from './position';
-import { AppConstants } from '../app.constants';
+import { AppConstants, DIRECTIONS, MOVEMENTS } from '../app.constants';
 
 export class Robot {
-    initialPosition: Position;
     movementInstructions: string[];
-    finalPosition: Position;
+    position: Position;
 
     constructor (startPosition: Position, movements: string[]) {
-        this.initialPosition = startPosition;
-        this.finalPosition = Object.assign({}, startPosition);
+        this.position = startPosition;
         this.movementInstructions = movements;
     }
-    move (): Position {
+    run () {
         for (let eachMove of this.movementInstructions) {
-            if (eachMove.toUpperCase() === "MOVE") {
-                if (this.finalPosition.facing.toUpperCase() === "NORTH") {
-                    if (this.finalPosition.yPosition < 4) {
-                        this.finalPosition.yPosition++;
-                    }
+            switch(eachMove) {
+                case (MOVEMENTS.MOVE): {
+                    this.position.moveByOneStep();
+                    break;
                 }
-                else if (this.finalPosition.facing.toUpperCase() === "SOUTH") {
-                    if (this.finalPosition.yPosition > 0) {
-                        this.finalPosition.yPosition--;
-                    }
+                case (MOVEMENTS.LEFT):
+                case (MOVEMENTS.RIGHT): {
+                    this.position.rotateRightOrLeft(eachMove);
+                    break;
                 }
-                else if (this.finalPosition.facing.toUpperCase() === "EAST") {
-                    if (this.finalPosition.xPosition < 4) {
-                        this.finalPosition.xPosition++;
-                    }
+                case (MOVEMENTS.REPORT): {
+                    return;
                 }
-                else if (this.finalPosition.facing.toUpperCase() === "WEST") {
-                    if (this.finalPosition.xPosition > 0) {
-                        this.finalPosition.xPosition--;
-                    }
-                }
-                else {
+                default: {
                     throw new Error(AppConstants.INPUT_NOT_RIGHT);
                 }
-            }
-            else if(eachMove.toUpperCase() === "RIGHT") {
-                if (this.finalPosition.facing.toUpperCase() === "NORTH") {
-                    this.finalPosition.facing = "EAST";
-                }
-                else if (this.finalPosition.facing.toUpperCase() === "SOUTH") {
-                    this.finalPosition.facing = "WEST";
-                }
-                else if (this.finalPosition.facing.toUpperCase() === "EAST") {
-                    this.finalPosition.facing = "SOUTH";
-                }
-                else if (this.finalPosition.facing.toUpperCase() === "WEST") {
-                    this.finalPosition.facing = "NORTH";
-                }
-                else {
-                    throw new Error(AppConstants.INPUT_NOT_RIGHT);
-                }
-            }
-            else if(eachMove.toUpperCase() === "LEFT") {
-                if (this.finalPosition.facing.toUpperCase() === "NORTH") {
-                    this.finalPosition.facing = "WEST";
-                }
-                else if (this.finalPosition.facing.toUpperCase() === "SOUTH") {
-                    this.finalPosition.facing = "EAST";
-                }
-                else if (this.finalPosition.facing.toUpperCase() === "EAST") {
-                    this.finalPosition.facing = "NORTH";
-                }
-                else if (this.finalPosition.facing.toUpperCase() === "WEST") {
-                    this.finalPosition.facing = "SOUTH";
-                }
-                else {
-                    throw new Error(AppConstants.INPUT_NOT_RIGHT);
-                }
-            }
-            else if(eachMove.toUpperCase() === "REPORT") {
-                return;
-            }
-            else {
-                throw new Error(AppConstants.INPUT_NOT_RIGHT);
             }
         }
+        // Execution is not supposed to reach here
         throw new Error(AppConstants.INPUT_NOT_RIGHT);
     }
 }
